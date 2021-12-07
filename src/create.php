@@ -27,7 +27,7 @@ if (!empty($_POST)) {
     // and the difficulty
     $difficulty = strip_tags($_POST['difficulty']);
     // let's also change the distance into a float
-    $distance = floatval($_POST['distance']);
+    $distance = $_POST['distance'];
     // let's change the time elements into integers
     $hours = duration_formatter($_POST['hours']);
     $minutes = duration_formatter($_POST['minutes']);
@@ -36,7 +36,6 @@ if (!empty($_POST)) {
     if (intval($hours) + intval($minutes) + intval($seconds) !== 0) {
       $duration = "$hours:$minutes:$seconds";
     } else {
-      console_log('Duration value is null');
       exit;
     }
     // finally elevation_gain has to be an integer
@@ -54,7 +53,6 @@ if (!empty($_POST)) {
 
     // execute returns a boolean so let's check it
     if (!$create_form_query->execute()) {
-      console_log('An error occurred while posting');
       exit;
     }
   }
@@ -103,6 +101,7 @@ if (!empty($_POST)) {
       type="number"
       name="distance"
       min="0"
+      step="0.01"
     >
 
     <label for="duration">duration</label>
