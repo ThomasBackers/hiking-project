@@ -1,10 +1,9 @@
 <?php
 require 'utils.php';
 require 'connection.php';
-
-$query = $pdo->prepare('SELECT * FROM hikes');
-$query->execute();
-$results = $query->fetchAll(PDO::FETCH_ASSOC);
+// $query = $pdo->prepare('SELECT * FROM hikes');
+// $query->execute();
+// $results = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
