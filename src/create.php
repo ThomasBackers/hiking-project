@@ -1,4 +1,5 @@
 <?php
+require_once("connection.php");
 // $query = $pdo->prepare('INSERT INTO hikes VALUES()');
 // $query->execute();
 if (!empty($_POST)) {
@@ -58,84 +59,77 @@ if (!empty($_POST)) {
   }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="create">
-  <h2 class="create__heading">
-    Create
-  </h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Models</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-  <form method="post" action="">
-    <label for="name">name</label>
-    <input
-      type="text"
-      name="name"
-      maxlength="255"
-    >
+<body>
+  <section class="create">
 
-    <label for="difficulty">difficulty</label>
+    <h2 class="create__heading">
+      Create
+    </h2>
 
-    <select name="difficulty">
-      <option value="very easy">
-        very easy
-      </option>
+    <form method="post" action="">
 
-      <option value="easy">
-        easy
-      </option>
 
-      <option value="moderate">
-        moderate
-      </option>
+      <div class="grid-containerx">
+        <div class="grid-item"><label for="name">name</label>
+          <input type="text" name="name" maxlength="255">
+        </div>
+        <div class="grid-item"><label for="difficulty">difficulty</label>
+          <select name="difficulty">
+            <option value="very easy">
+              very easy
+            </option>
 
-      <option value="hard">
-        hard
-      </option>
+            <option value="easy">
+              easy
+            </option>
 
-      <option value="very hard">
-        very hard
-      </option>
-    </select>
+            <option value="moderate">
+              moderate
+            </option>
 
-    <label for="distance">distance</label>
-    <input
-      type="number"
-      name="distance"
-      min="0"
-      step="0.01"
-    >
+            <option value="hard">
+              hard
+            </option>
 
-    <label for="duration">duration</label>
-    <div name="duration">
-      <input
-          type="number"
-          name="hours"
-          min="0"
-          max="24"
-      >
-      hours
-      <input
-          type="number"
-          name="minutes"
-          min="0"
-          max="59"
-      >
-      minutes
-      <input
-          type="number"
-          name="seconds"
-          min="0"
-          max="59"
-      >
-      seconds
-    </div>
+            <option value="very hard">
+              very hard
+            </option>
+          </select>
+        </div>
+        <div class="grid-item"><label for="distance">distance</label>
+          <input type="number" name="distance" min="0" step="0.01">
+        </div>
+        <div class="grid-item"><label for="duration">duration</label>
+          <div name="duration">
+            <input type="number" name="hours" min="0" max="24">
+            hours
+            <input type="number" name="minutes" min="0" max="59">
+            minutes
+            <input type="number" name="seconds" min="0" max="59">
+            seconds
+          </div>
+        </div>
+        <div class="grid-item"><label for="elevation_gain">elevation gain</label>
+          <input type="number" name="elevation_gain" min="0">
+        </div>
+        <div class="grid-item"><input type="submit" value="submit"></div>
+        <div class="grid-item">
+          <div class="grid-item">
+            <button><a href="./index.php">List of records</a></button>
+          </div>
+        </div>
 
-    <label for="elevation_gain">elevation gain</label>
-    <input
-      type="number"
-      name="elevation_gain"
-      min="0"
-    >
-
-    <input type="submit" value="submit">
-  </form>
-</section>
+      </div>
+    </form>
+  </section>
+</body>

@@ -1,4 +1,7 @@
 <?php
+
+require_once("utils.php");
+
 define('DB_DSN', 'mysql:host=188.166.24.55;dbname=jepsen5-andrewskurka;port=3306');
 define('DB_USER', 'jepsen5-andrewskurka');
 define('DB_PASSWORD', 'xSJ@wULb6qK76X#v}EDn');
@@ -9,9 +12,10 @@ define('OPTIONS', [
 
 try {
   $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD, OPTIONS);
-  console_log('Successfully connected!');
+  //console_log('Successfully connected!');
 } catch(PDOException $pdo_exception) {
-  console_log('ERROR: '.$pdo_exception->getMessage());
+  //console_log('ERROR: '.$pdo_exception->getMessage());
+  echo "ERREUR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
   exit;
 }
 ?>
