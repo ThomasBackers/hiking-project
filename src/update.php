@@ -10,6 +10,77 @@ try {
 	echo e->getMessage();
 	exit;
 }
+
+// duration values formatter needed into create.php
+function duration_formatter($post_value) {
+  strlen($post_value) === 1 ? $final_value = '0'.$post_value : $final_value = $post_value;
+  return $final_value;
+}
+
+if (!empty($_POST)) {
+  if (
+    // let's check if everything is set
+    isset(
+      $_POST['name'],
+      $_POST['difficulty'],
+      $_POST['distance'],
+      $_POST['hours'],
+      $_POST['minutes'],
+      $_POST['seconds'],
+      $_POST['elevation_gain']
+    ) &&
+    // if everything is fulfilled too
+    !empty($_POST['name']) &&
+    !empty($_POST['difficulty']) &&
+    !empty($_POST['distance']) &&
+    !empty($_POST['hours']) &&
+    !empty($_POST['minutes']) &&
+    !empty($_POST['seconds']) &&
+    !empty($_POST['elevation_gain'])
+  ) {
+    // let's sanitize the name
+    $name = strip_tags($_POST['name']);
+    // and the difficulty
+    $difficulty = strip_tags($_POST['difficulty']);
+    // let's also change the distance into a float
+    $distance = $_POST['distance'];
+    // let's change the time elements into integers
+    $hours = duration_formatter($_POST['hours']);
+    $minutes = duration_formatter($_POST['minutes']);
+    $seconds = duration_formatter($_POST['seconds']);
+    // this one is for checking if time value is null
+    if (intval($hours) + intval($minutes) + intval($seconds) !== 0) {
+      $duration = "$hours:$minutes:$seconds";
+    } else {
+      exit;
+    }
+    // finally elevation_gain has to be an integer
+    $elevation_gain = intval($_POST['elevation_gain']);
+		$intId = intval($id);
+
+    $update_form_query = $pdo->prepare(
+      'UPDATE hikes
+			SET name = :name,
+					difficulty = :difficulty,
+					distance = :distance,
+					duration = :duration,
+					elevationGain = :elevation_gain
+			WHERE ID = :ID'
+    );
+    $update_form_query->bindParam(':name', $name, PDO::PARAM_STR);
+    $update_form_query->bindParam(':difficulty', $difficulty, PDO::PARAM_STR);
+    $update_form_query->bindParam(':distance', $distance, PDO::PARAM_STR);
+    $update_form_query->bindParam(':duration', $duration, PDO::PARAM_STR);
+    $update_form_query->bindParam(':elevation_gain', $elevation_gain, PDO::PARAM_INT);
+		$update_form_query->bindParam(':ID', $intId, PDO::PARAM_INT);
+
+    // execute returns a boolean so let's check it
+    if (!$update_form_query->execute()) {
+      exit;
+    } 
+		header("location:index.php");
+  }
+}
 ?>
 
 <!DOCTYPE html>

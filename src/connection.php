@@ -1,7 +1,4 @@
 <?php
-
-require_once("utils.php");
-
 define('DB_DSN', 'mysql:host=188.166.24.55;dbname=jepsen5-andrewskurka;port=3306');
 define('DB_USER', 'jepsen5-andrewskurka');
 define('DB_PASSWORD', 'xSJ@wULb6qK76X#v}EDn');
