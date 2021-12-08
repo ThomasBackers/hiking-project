@@ -25,6 +25,8 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hikes</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -40,7 +42,9 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             <div class="grid-item"><?php echo $hike["duration"]; ?></div>
             <div class="grid-item"><?php echo $hike["elevationGain"]; ?></div>
             <div class="grid-item">
-                <form method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>"><input type="submit" name="delete-record" value="Delete record"></input></form>
+                <form class="delete-form" method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>">
+                  <input type="submit" name="delete-record" value="Delete record"></input>
+                </form>
             </div>
             <div class="grid-item">
                 <form method="post" action="update.php?id=<?php echo $hike["ID"]; ?>"><input type="submit" name="update-record" value="Update record"></input></form>
@@ -52,8 +56,46 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>        
     <?php endforeach; ?>
-    
-   
+    <script>
+      $('.delete-form').on('submit', function(e){
+        e.preventDefault();
+        const swalWithBootstrapButtons = Swal.mixin({
+          customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+          },
+          buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, delete it!',
+          cancelButtonText: 'No, cancel!',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+              'Deleted!',
+              'Your record has been deleted.',
+              'success'
+            )
+            e.target.submit()
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              'Cancelled',
+              'Database is safe :)',
+              'error'
+            )
+          }
+        })
+      })
+    </script>
 </body>
 
 </html>
