@@ -2,6 +2,13 @@
 require_once("connection.php");
 // $query = $pdo->prepare('INSERT INTO hikes VALUES()');
 // $query->execute();
+
+// duration values formatter needed into create.php
+function duration_formatter($post_value) {
+  strlen($post_value) === 1 ? $final_value = '0'.$post_value : $final_value = $post_value;
+  return $final_value;
+}
+
 if (!empty($_POST)) {
   if (
     // let's check if everything is set
@@ -56,6 +63,7 @@ if (!empty($_POST)) {
     if (!$create_form_query->execute()) {
       exit;
     }
+    header("location:index.php");
   }
 }
 ?>

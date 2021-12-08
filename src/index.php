@@ -40,7 +40,14 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             <div class="grid-item"><?php echo $hike["duration"]; ?></div>
             <div class="grid-item"><?php echo $hike["elevationGain"]; ?></div>
             <div class="grid-item">
+<<<<<<< HEAD
                 <form method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>" onsubmit="return submit(this);"><input type="submit" name="<?PHP echo $hike["ID"]; ?>" value="Delete record"></input></form>
+=======
+                <form method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>"><input type="submit" name="delete-record" value="Delete record"></input></form>
+            </div>
+            <div class="grid-item">
+                <form method="post" action="update.php?id=<?php echo $hike["ID"]; ?>"><input type="submit" name="update-record" value="Update record"></input></form>
+>>>>>>> 64545740e0560815d2b3540f98094d5541173526
             </div>
             <div class="grid-item">
                 <form method="POST" action="create.php">
