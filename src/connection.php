@@ -12,10 +12,8 @@ define('OPTIONS', [
 
 try {
   $pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD, OPTIONS);
-  //console_log('Successfully connected!');
 } catch(PDOException $pdo_exception) {
-  //console_log('ERROR: '.$pdo_exception->getMessage());
-  echo "ERREUR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+  echo $pdo_exception->getMessage();
   exit;
 }
 ?>
