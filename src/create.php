@@ -87,7 +87,7 @@ if (!empty($_POST)) {
     <form method="post" action="">
 
 
-      <div class="grid-containerx">
+      <div class="grid-containerxx">
         <div class="grid-item"><label for="name">name</label>
           <input type="text" name="name" maxlength="255">
         </div>

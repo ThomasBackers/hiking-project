@@ -1,13 +1,19 @@
 /*Styles*/
 .grid-container {
     display: grid;
-    grid-template-columns: 3% auto 10% 6% 10% 5% 9% 9%;
+    grid-template-columns: 3% auto 10% 6% 10% 5% 9% 9% 9%;
     background-color: #63b4f7;
     padding: 10px;
 }
 .grid-containerx {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
+    background-color: #63b4f7;
+    padding: 10px;
+}
+.grid-containerxx {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
     background-color: #63b4f7;
     padding: 10px;
 }
