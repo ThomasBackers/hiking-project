@@ -11,7 +11,7 @@ if(!empty($_POST)) {
     $q = $pdo->prepare('SELECT * FROM users WHERE username=:username');
     $q->bindParam(':username', $username, PDO::PARAM_STR);
     if(!$q->execute()) {
-        exit('unable to join the database');
+        exit('unable to join the database or unable to execute query');
     }
 
     $user = $q->fetch(PDO::FETCH_ASSOC);
@@ -28,20 +28,20 @@ if(!empty($_POST)) {
         'email' => $user['email']
     ];
 
-    header('location: index.php');
+    header('location:index.php');
   }
 }
 ?>
 <h1>User Login</h1>
 
 <form method="post" action="">
-    <div>
-        <label for="username">Username</label>
-        <input type="text" name="username">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="text" name="password">
-    </div>
-    <button type="submit">Login</button>
+  <div>
+      <label for="username">Username</label>
+      <input type="text" name="username">
+  </div>
+  <div>
+      <label for="password">Password</label>
+      <input type="password" name="password">
+  </div>
+  <button type="submit">Login</button>
 </form>
