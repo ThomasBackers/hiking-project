@@ -7,7 +7,7 @@ try {
 	$q->execute();
 	$hike = $q->fetch(PDO::FETCH_ASSOC);
 } catch (Exception $e) {
-	echo e->getMessage();
+	echo $e->getMessage();
 	exit;
 }
 
