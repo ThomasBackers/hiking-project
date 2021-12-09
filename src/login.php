@@ -32,7 +32,7 @@ if(!empty($_POST)) {
   }
 }
 ?>
-<h1>User Login</h1>
+<h1>Login</h1>
 
 <form method="post" action="">
   <div>

@@ -40,7 +40,7 @@ if(!empty($_POST)) {
   }
 }
 ?>
-<h1>User subscription</h1>
+<h1>Sign up</h1>
 
     <form method="post" action="">
         <div>
