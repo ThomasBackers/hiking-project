@@ -11,21 +11,21 @@ if(!empty($_POST)) {
     $q = $pdo->prepare('SELECT * FROM users WHERE username=:username');
     $q->bindParam(':username', $username, PDO::PARAM_STR);
     if(!$q->execute()) {
-        exit('unable to join the database or unable to execute query');
+      exit('unable to join the database or unable to execute query');
     }
 
     $user = $q->fetch(PDO::FETCH_ASSOC);
     if(!$user) {
-        exit('user doesn\'t exist and/or password incorrect');
+      exit('user doesn\'t exist and/or password incorrect');
     }
     if(!password_verify($_POST['password'], $user['passwordHash'])){
-        exit('user doesn\'t exist and/or password incorrect');
+      exit('user doesn\'t exist and/or password incorrect');
     }
 
     $_SESSION['user'] = [
-        'ID' => $user['ID'],
-        'username' => $user['username'],
-        'email' => $user['email']
+      'ID' => $user['ID'],
+      'username' => $user['username'],
+      'email' => $user['email']
     ];
 
     header('location:index.php');
@@ -36,12 +36,12 @@ if(!empty($_POST)) {
 
 <form method="post" action="">
   <div>
-      <label for="username">Username</label>
-      <input type="text" name="username">
+    <label for="username">Username</label>
+    <input type="text" name="username">
   </div>
   <div>
-      <label for="password">Password</label>
-      <input type="password" name="password">
+    <label for="password">Password</label>
+    <input type="password" name="password">
   </div>
   <button type="submit">Login</button>
 </form>

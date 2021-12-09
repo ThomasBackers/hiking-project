@@ -10,7 +10,7 @@ if(!empty($_POST)) {
       $username = strip_tags($_POST['username']);
       
       if(!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) {
-          exit('invalid e-mail address');
+        exit('invalid e-mail address');
       }
       
       $password_hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -24,14 +24,14 @@ if(!empty($_POST)) {
       $q->bindParam(':password_hash', $password_hash, PDO::PARAM_STR);
       
       if (!$q->execute()) {
-          exit('unable to join the database or unable to execute query');
+        exit('unable to join the database or unable to execute query');
       }
 
       $ID = $pdo->lastInsertId();
       $_SESSION['user'] = [
-              'ID'=> $ID,
-              'username' => $username,
-              'email' => $_POST['email']
+        'ID'=> $ID,
+        'username' => $username,
+        'email' => $_POST['email']
       ];
 
       header("location: index.php");
