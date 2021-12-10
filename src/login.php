@@ -1,7 +1,7 @@
 <?php
-require_once 'connection.php';
-
 session_start();
+
+require_once 'connection.php';
 
 if(!empty($_POST)) {
   if(isset($_POST['username'],$_POST['password'])
@@ -45,3 +45,5 @@ if(!empty($_POST)) {
   </div>
   <button type="submit">Login</button>
 </form>
+
+<a href="/signup.php">sign up</a>

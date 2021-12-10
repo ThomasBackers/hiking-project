@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+if (!$_SESSION) {
+  header('location:login.php');
+}
 
 require_once("connection.php");
 

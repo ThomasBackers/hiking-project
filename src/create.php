@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!$_SESSION) {
+  header('location:login.php');
+}
+
 require_once("connection.php");
 // $query = $pdo->prepare('INSERT INTO hikes VALUES()');
 // $query->execute();

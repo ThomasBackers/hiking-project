@@ -1,7 +1,8 @@
 <?php
+session_start();
+
 require_once 'connection.php';
 
-session_start();
 
 if(!empty($_POST)) {
     if(isset($_POST['username'], $_POST['email'], $_POST['password']) &&
