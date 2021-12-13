@@ -418,3 +418,14 @@ body .login-section .login-form a {
 body .login-section .login-form a {
   background-color: #ccc;
 }
+
+body .create {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80vh;
+}
+
+body .create__form {
+  margin: auto;
+}

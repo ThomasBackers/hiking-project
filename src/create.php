@@ -80,18 +80,19 @@ if (!empty($_POST)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic Models</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="./styles/main.min.css" rel="stylesheet">
 </head>
 
 <body>
+  <?php include 'header.php'?>
   <section class="create">
 
-    <h2 class="create__heading">
-      Create
-    </h2>
-
-    <form method="post" action="">
-
+    
+    <form class="create__form" method="post" action="">
+      <h2 class="create__form__heading">
+        Create
+      </h2>
+      
 
       <div class="grid-containerxx">
         <div class="grid-item"><label for="name">name</label>
