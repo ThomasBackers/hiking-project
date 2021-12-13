@@ -108,11 +108,14 @@ if (!empty($_POST)) {
 					Update
 				</h2>
 
-				<div class="grid-containerx">
-					<div class="grid-item"><label for="name">Name</label>
+				<div class="create__form__input-field">
+					<div class="grid-item">
+						<label for="name">Name</label>
 						<input type="text" name="name" maxlength="255" value="<?php echo $hike['name']; ?>">
 					</div>
-					<div class="grid-item"><label for="difficulty">Difficulty</label>
+
+					<div class="create__form__input-field">
+						<label for="difficulty">Difficulty</label>
 						<select name="difficulty">
 							<?php
 							$all_values = [
@@ -138,10 +141,14 @@ if (!empty($_POST)) {
 							?>
 						</select>
 					</div>
-					<div class="grid-item"><label for="distance">Distance</label>
+
+					<div class="create__form__input-field">
+						<label for="distance">Distance</label>
 						<input type="number" name="distance" min="0" step="0.01" value="<?php echo $hike['distance']; ?>">
 					</div>
-					<div class="grid-item"><label for="duration">Duration</label>
+
+					<div class="create__form__input-field">
+						<label for="duration">Duration</label>
 						<div name="duration">
 							<input type="number" name="hours" min="0" max="24" value="<?php echo substr($hike['duration'], 0, 2); ?>">
 							Hours
@@ -151,15 +158,15 @@ if (!empty($_POST)) {
 							Seconds
 						</div>
 					</div>
-					<div class="grid-item"><label for="elevation_gain">Elevation gain</label>
+
+					<div class="create__form__input-field">
+						<label for="elevation_gain">Elevation gain</label>
 						<input type="number" name="elevation_gain" min="0" value="<?php echo $hike['elevationGain']; ?>">
 					</div>
-					<div class="grid-item"><input type="submit" value="submit"></div>
-					<div class="grid-item">
-						<div class="grid-item">
-							<button><a href="./index.php">list of records</a></button>
-						</div>
-					</div>
+
+					<input class="create__form__button" type="submit" value="submit">
+
+					<a class="create__form__link" href="./index.php">list of records</a>
 				</div>
 			</form>
 		</section>

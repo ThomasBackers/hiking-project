@@ -98,6 +98,7 @@ if (!empty($_POST)) {
           <label for="name">Name</label>
           <input type="text" name="name" maxlength="255">
         </div>
+        
         <div class="create__form__input-field">
           <label for="difficulty">Difficulty</label>
           <select name="difficulty">
