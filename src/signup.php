@@ -3,7 +3,6 @@ session_start();
 
 require_once 'connection.php';
 
-
 if(!empty($_POST)) {
     if(isset($_POST['username'], $_POST['email'], $_POST['password']) &&
       !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])
@@ -44,17 +43,17 @@ if(!empty($_POST)) {
 <h1>Sign up</h1>
 
     <form method="post" action="">
-        <div>
-            <label for="username">Login :</label>
-            <input type="text" name="username">
-        </div>
-        <div>
-            <label for="email">Email :</label>
-            <input type="email" name="email">
-        </div>
-        <div>
-            <label for="password">Password :</label>
-            <input type="password" name="password">
-        </div>
-        <button type="submit">Subscribe</button>
+      <div>
+          <label for="username">Login :</label>
+          <input type="text" name="username">
+      </div>
+      <div>
+          <label for="email">Email :</label>
+          <input type="email" name="email">
+      </div>
+      <div>
+          <label for="password">Password :</label>
+          <input type="password" name="password">
+      </div>
+      <button type="submit">Subscribe</button>
     </form>
