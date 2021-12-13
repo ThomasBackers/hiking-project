@@ -59,7 +59,7 @@ if(!empty($_POST)) {
       <h2 class="login-form__heading">Sign up</h2>
 
       <div class="login-form__input-field">
-          <label class="login-form__input-field__label" for="username">Login</label>
+          <label class="login-form__input-field__label" for="username">Username</label>
           <input class="login-form__input-field__input" type="text" name="username">
       </div>
 
