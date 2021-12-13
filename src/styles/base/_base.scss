@@ -67,6 +67,18 @@ body {
     height: 80vh;
     &__form {
       margin: auto;
+      box-shadow: 0 0 15px #888;
+      background-color: #eee;
+      border-radius: 20px;
+      padding: 1.75rem;
+      &__heading {
+        margin: 0;
+        font-family: $heading-font;
+        color: $clr-1;
+        border-bottom: 2px solid $clr-1;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
     }
   }
 }

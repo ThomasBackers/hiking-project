@@ -95,21 +95,24 @@ if (!empty($_POST)) {
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
+		<title>Hiking Project</title>
+		<link href="./styles/main.min.css" rel="stylesheet">
 	</head>
 	<body>
+		<?php include 'header.php' ?>
 		<section class="create">
 
-			<h2 class="create__heading">
-				Create
-			</h2>
+			
+			<form class="create__form" method="post" action="">
+				<h2 class="create__form__heading">
+					Update
+				</h2>
 
-			<form method="post" action="">
 				<div class="grid-containerx">
-					<div class="grid-item"><label for="name">name</label>
+					<div class="grid-item"><label for="name">Name</label>
 						<input type="text" name="name" maxlength="255" value="<?php echo $hike['name']; ?>">
 					</div>
-					<div class="grid-item"><label for="difficulty">difficulty</label>
+					<div class="grid-item"><label for="difficulty">Difficulty</label>
 						<select name="difficulty">
 							<?php
 							$all_values = [
@@ -135,26 +138,26 @@ if (!empty($_POST)) {
 							?>
 						</select>
 					</div>
-					<div class="grid-item"><label for="distance">distance</label>
+					<div class="grid-item"><label for="distance">Distance</label>
 						<input type="number" name="distance" min="0" step="0.01" value="<?php echo $hike['distance']; ?>">
 					</div>
-					<div class="grid-item"><label for="duration">duration</label>
+					<div class="grid-item"><label for="duration">Duration</label>
 						<div name="duration">
 							<input type="number" name="hours" min="0" max="24" value="<?php echo substr($hike['duration'], 0, 2); ?>">
-							hours
+							Hours
 							<input type="number" name="minutes" min="0" max="59" value="<?php echo substr($hike['duration'], 3, 2); ?>">
-							minutes
+							Minutes
 							<input type="number" name="seconds" min="0" max="59" value="<?php echo substr($hike['duration'], 6, 2); ?>">
-							seconds
+							Seconds
 						</div>
 					</div>
-					<div class="grid-item"><label for="elevation_gain">elevation gain</label>
+					<div class="grid-item"><label for="elevation_gain">Elevation gain</label>
 						<input type="number" name="elevation_gain" min="0" value="<?php echo $hike['elevationGain']; ?>">
 					</div>
 					<div class="grid-item"><input type="submit" value="submit"></div>
 					<div class="grid-item">
 						<div class="grid-item">
-							<button><a href="./index.php">List of records</a></button>
+							<button><a href="./index.php">list of records</a></button>
 						</div>
 					</div>
 				</div>
