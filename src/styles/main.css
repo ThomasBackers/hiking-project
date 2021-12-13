@@ -414,3 +414,7 @@ body .login-section .login-form a {
   font-size: 1.2rem;
   border-radius: 10px;
 }
+
+body .login-section .login-form a {
+  background-color: #ccc;
+}
