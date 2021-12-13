@@ -18,8 +18,6 @@ try {
 }
 // PDO::FETCH_ASSOC to display only the columns as keys in the array returned
 $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
-
-
 ?>
 
 <!DOCTYPE html>
