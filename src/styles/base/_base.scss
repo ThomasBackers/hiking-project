@@ -11,6 +11,7 @@ body {
     width: 90%;
     margin: 0 auto;
   }
+
   header {
     box-shadow: 0 0 15px #888;
     padding: 1.5rem 0;
@@ -21,6 +22,7 @@ body {
       font-family: $heading-font;
     }
   }
+
   .login-section {
     display: flex;
     height: 80vh;
@@ -41,6 +43,30 @@ body {
       &__input-field {
         padding: .5rem 0;
       }
+      button,
+      a {
+        padding: .3rem .6rem;
+        background: $clr-1;
+        border: none;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 1rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+        border-radius: 10px;
+      }
+      a {
+        background-color: #ccc;
+      }
+    }
+  }
+
+  .create {
+    display: flex;
+    height: 80vh;
+    &__form {
+      margin: auto;
     }
   }
 }
