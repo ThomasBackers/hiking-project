@@ -40,20 +40,42 @@ if(!empty($_POST)) {
   }
 }
 ?>
-<h1>Sign up</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./styles/main.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <?php include 'header.php' ?>
 
-    <form method="post" action="">
-      <div>
-          <label for="username">Login :</label>
-          <input type="text" name="username">
+  <section class="login-section">
+
+    
+    <form class="login-form" method="post" action="">
+      <h2 class="login-form__heading">Sign up</h2>
+
+      <div class="login-form__input-field">
+          <label class="login-form__input-field__label" for="username">Login :</label>
+          <input class="login-form__input-field__input" type="text" name="username">
       </div>
-      <div>
-          <label for="email">Email :</label>
-          <input type="email" name="email">
+
+      <div class="login-form__input-field">
+          <label class="login-form__input-field__label" for="email">Email :</label>
+          <input class="login-form__input-field__input" type="email" name="email">
       </div>
-      <div>
-          <label for="password">Password :</label>
-          <input type="password" name="password">
+
+      <div class="login-form__input-field">
+          <label class="login-form__input-field__label" for="password">Password :</label>
+          <input class="login-form__input-field__input" type="password" name="password">
       </div>
-      <button type="submit">Subscribe</button>
+      <button type="submit">subscribe</button>
+      <a href="/login.php">login</a>
     </form>
+
+  </section>
+</body>
+</html>
