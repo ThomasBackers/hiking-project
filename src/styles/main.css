@@ -400,3 +400,17 @@ body .login-section .login-form__heading {
 body .login-section .login-form__input-field {
   padding: .5rem 0;
 }
+
+body .login-section .login-form button,
+body .login-section .login-form a {
+  padding: .3rem .6rem;
+  background: #234f37;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}

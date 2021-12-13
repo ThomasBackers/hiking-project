@@ -57,8 +57,8 @@ if(!empty($_POST)) {
         <label class="login-form__input-field__label" for="password">Password</label>
         <input class="login-form__input-field__input" type="password" name="password">
       </div>
-      <button  type="submit">Login</button>
-      
+
+      <button  type="submit">login</button>
       <a href="/signup.php">sign up</a>
     </form>
 
