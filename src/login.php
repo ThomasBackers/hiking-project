@@ -58,8 +58,8 @@ if(!empty($_POST)) {
         <input class="login-form__input-field__input" type="password" name="password">
       </div>
 
-      <button  type="submit">login</button>
-      <a href="/signup.php">sign up</a>
+      <button class="login-form__button" type="submit">login</button>
+      <a class="login-form__link" href="/signup.php">sign up</a>
     </form>
 
   </section>

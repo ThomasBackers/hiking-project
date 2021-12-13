@@ -363,7 +363,6 @@ body header {
   -webkit-box-shadow: 0 0 15px #888;
           box-shadow: 0 0 15px #888;
   padding: 1.5rem 0;
-  background-color: #ccc;
 }
 
 body header h1 {
@@ -401,8 +400,7 @@ body .login-section .login-form__input-field {
   padding: .5rem 0;
 }
 
-body .login-section .login-form button,
-body .login-section .login-form a {
+body .login-section .login-form__button, body .login-section .login-form__link {
   padding: .3rem .6rem;
   background: #234f37;
   border: none;
@@ -415,7 +413,7 @@ body .login-section .login-form a {
   border-radius: 10px;
 }
 
-body .login-section .login-form a {
+body .login-section .login-form__link {
   background-color: #ccc;
 }
 
@@ -442,4 +440,25 @@ body .create__form__heading {
   border-bottom: 2px solid #234f37;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+}
+
+body .create__form__input-field {
+  padding: .5rem 0;
+}
+
+body .create__form__button, body .create__form__link {
+  padding: .3rem .6rem;
+  background: #234f37;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  margin: 1rem 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+body .create__form__link {
+  background-color: #ccc;
 }

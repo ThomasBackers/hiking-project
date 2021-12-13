@@ -85,20 +85,21 @@ if (!empty($_POST)) {
 
 <body>
   <?php include 'header.php'?>
-  <section class="create">
 
-    
-    <form class="create__form" method="post" action="">
+  <section class="create">
+    <form class="create__form" class="create__form" method="post" action="">
       <h2 class="create__form__heading">
         Create
       </h2>
       
 
       <div class="grid-containerxx">
-        <div class="grid-item"><label for="name">Name</label>
+        <div class="create__form__input-field">
+          <label for="name">Name</label>
           <input type="text" name="name" maxlength="255">
         </div>
-        <div class="grid-item"><label for="difficulty">Difficulty</label>
+        <div class="create__form__input-field">
+          <label for="difficulty">Difficulty</label>
           <select name="difficulty">
             <option value="very easy">
               very easy
@@ -121,10 +122,14 @@ if (!empty($_POST)) {
             </option>
           </select>
         </div>
-        <div class="grid-item"><label for="distance">Distance</label>
+
+        <div class="create__form__input-field">
+          <label for="distance">Distance</label>
           <input type="number" name="distance" min="0" step="0.01">
         </div>
-        <div class="grid-item"><label for="duration">Duration</label>
+
+        <div class="create__form__input-field">
+          <label for="duration">Duration</label>
           <div name="duration">
             <input type="number" name="hours" min="0" max="24">
             Hours
@@ -134,15 +139,16 @@ if (!empty($_POST)) {
             Seconds
           </div>
         </div>
-        <div class="grid-item"><label for="elevation_gain">Elevation gain</label>
+
+        <div class="create__form__input-field">
+          <label for="elevation_gain">Elevation gain</label>
           <input type="number" name="elevation_gain" min="0">
         </div>
-        <div class="grid-item"><input type="submit" value="submit"></div>
-        <div class="grid-item">
-          <div class="grid-item">
-            <button><a href="./index.php">list of records</a></button>
-          </div>
-        </div>
+
+        <input class="create__form__button" type="submit" value="submit">
+
+
+        <a class="create__form__link" href="./index.php">list of records</a>
 
       </div>
     </form>

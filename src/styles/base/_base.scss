@@ -15,7 +15,6 @@ body {
   header {
     box-shadow: 0 0 15px #888;
     padding: 1.5rem 0;
-    background-color: #ccc;
     h1 {
       margin: 0;
       color: $clr-1;
@@ -43,8 +42,8 @@ body {
       &__input-field {
         padding: .5rem 0;
       }
-      button,
-      a {
+      &__button,
+      &__link {
         padding: .3rem .6rem;
         background: $clr-1;
         border: none;
@@ -56,7 +55,7 @@ body {
         font-size: 1.2rem;
         border-radius: 10px;
       }
-      a {
+      &__link {
         background-color: #ccc;
       }
     }
@@ -78,6 +77,25 @@ body {
         border-bottom: 2px solid $clr-1;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
+      }
+      &__input-field {
+        padding: .5rem 0;
+      }
+      &__button,
+      &__link {
+        padding: .3rem .6rem;
+        background: $clr-1;
+        border: none;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        margin: 1rem 0;
+        font-weight: 700;
+        font-size: 1.2rem;
+        border-radius: 10px;
+      }
+      &__link {
+        background-color: #ccc;
       }
     }
   }
