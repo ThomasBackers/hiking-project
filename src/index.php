@@ -47,13 +47,9 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             <div class="grid-item"><?php echo $hike["duration"]; ?></div>
             <div class="grid-item"><?php echo $hike["elevationGain"]; ?></div>
             <?php if ($hike["modified_at"] == null) : ?>
-
                 <div class = "grid-item" > Created at <?php echo $hike["created_at"]; ?> </div>
-
             <?php else : ?>
-
                 <div class = "grid-item" > Modified at <?php echo $hike["modified_at"]; ?> </div>
-
             <?php endif ?>
             <div class="grid-item">
                 <form class="delete-form" method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>">
