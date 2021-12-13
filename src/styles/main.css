@@ -428,5 +428,19 @@ body .create {
 
 body .create__form {
   margin: auto;
+  -webkit-box-shadow: 0 0 15px #888;
+          box-shadow: 0 0 15px #888;
+  background-color: #eee;
+  border-radius: 20px;
+  padding: 1.75rem;
+}
+
+body .create__form__heading {
+  margin: 0;
+  font-family: "Bakbak One", cursive;
+  color: #234f37;
+  border-bottom: 2px solid #234f37;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

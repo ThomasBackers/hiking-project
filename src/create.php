@@ -79,7 +79,7 @@ if (!empty($_POST)) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classic Models</title>
+  <title>Hiking Project</title>
   <link href="./styles/main.min.css" rel="stylesheet">
 </head>
 
@@ -95,10 +95,10 @@ if (!empty($_POST)) {
       
 
       <div class="grid-containerxx">
-        <div class="grid-item"><label for="name">name</label>
+        <div class="grid-item"><label for="name">Name</label>
           <input type="text" name="name" maxlength="255">
         </div>
-        <div class="grid-item"><label for="difficulty">difficulty</label>
+        <div class="grid-item"><label for="difficulty">Difficulty</label>
           <select name="difficulty">
             <option value="very easy">
               very easy
@@ -121,26 +121,26 @@ if (!empty($_POST)) {
             </option>
           </select>
         </div>
-        <div class="grid-item"><label for="distance">distance</label>
+        <div class="grid-item"><label for="distance">Distance</label>
           <input type="number" name="distance" min="0" step="0.01">
         </div>
-        <div class="grid-item"><label for="duration">duration</label>
+        <div class="grid-item"><label for="duration">Duration</label>
           <div name="duration">
             <input type="number" name="hours" min="0" max="24">
-            hours
+            Hours
             <input type="number" name="minutes" min="0" max="59">
-            minutes
+            Minutes
             <input type="number" name="seconds" min="0" max="59">
-            seconds
+            Seconds
           </div>
         </div>
-        <div class="grid-item"><label for="elevation_gain">elevation gain</label>
+        <div class="grid-item"><label for="elevation_gain">Elevation gain</label>
           <input type="number" name="elevation_gain" min="0">
         </div>
         <div class="grid-item"><input type="submit" value="submit"></div>
         <div class="grid-item">
           <div class="grid-item">
-            <button><a href="./index.php">List of records</a></button>
+            <button><a href="./index.php">list of records</a></button>
           </div>
         </div>
 
