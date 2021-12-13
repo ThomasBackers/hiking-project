@@ -28,11 +28,13 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hikes</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="./styles/main.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    <?php include 'header.php';?>
     <a href="logout.php">logout</a>
 
     <h1>Hikes</h1>
