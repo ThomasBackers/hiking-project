@@ -32,21 +32,36 @@ if(!empty($_POST)) {
   }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./styles/main.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <?php include 'header.php';?>
+  
+  <section class="login-section">
+    
+    <form method="post" action="" class="login-form">
+      <h2 class="login-form__heading">Login</h2>
 
+      <div class="login-form__input-field">
+        <label class="login-form__input-field__label" for="username">Username</label>
+        <input class="login-form__input-field__input" type="text" name="username">
+      </div>
+      <div class="login-form__input-field">
+        <label class="login-form__input-field__label" for="password">Password</label>
+        <input class="login-form__input-field__input" type="password" name="password">
+      </div>
+      <button  type="submit">Login</button>
+      
+      <a href="/signup.php">sign up</a>
+    </form>
 
-
-<h1>Login</h1>
-
-<form method="post" action="">
-  <div>
-    <label for="username">Username</label>
-    <input type="text" name="username">
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" name="password">
-  </div>
-  <button type="submit">Login</button>
-</form>
-
-<a href="/signup.php">sign up</a>
+  </section>
+</body>
+</html>
