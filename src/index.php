@@ -47,13 +47,9 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             <div class="grid-item"><?php echo $hike["duration"]; ?></div>
             <div class="grid-item"><?php echo $hike["elevationGain"]; ?></div>
             <?php if ($hike["modified_at"] == null) : ?>
-
                 <div class = "grid-item" > Created at <?php echo $hike["created_at"]; ?> </div>
-
             <?php else : ?>
-
                 <div class = "grid-item" > Modified at <?php echo $hike["modified_at"]; ?> </div>
-
             <?php endif ?>
             <div class="grid-item">
                 <form class="delete-form" method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>">
@@ -70,45 +66,6 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     <?php endforeach; ?>
-    <script>
-        $('.delete-form').on('submit', function(e) {
-            e.preventDefault();
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: 'btn btn-success',
-                    cancelButton: 'btn btn-danger'
-                },
-                buttonsStyling: false
-            })
-
-            swalWithBootstrapButtons.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel!',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    swalWithBootstrapButtons.fire(
-                        'Deleted!',
-                        'Your record has been deleted.',
-                        'success'
-                    )
-                    e.target.submit()
-                } else if (
-                    /* Read more about handling dismissals below */
-                    result.dismiss === Swal.DismissReason.cancel
-                ) {
-                    swalWithBootstrapButtons.fire(
-                        'Cancelled',
-                        'Database is safe :)',
-                        'error'
-                    )
-                }
-            })
-        })        
-    </script>
+    <script type="text/javascript" src="scripts.js"></script>  
 </body>
 </html>
