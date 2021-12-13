@@ -59,17 +59,17 @@ if(!empty($_POST)) {
       <h2 class="login-form__heading">Sign up</h2>
 
       <div class="login-form__input-field">
-          <label class="login-form__input-field__label" for="username">Login :</label>
+          <label class="login-form__input-field__label" for="username">Login</label>
           <input class="login-form__input-field__input" type="text" name="username">
       </div>
 
       <div class="login-form__input-field">
-          <label class="login-form__input-field__label" for="email">Email :</label>
+          <label class="login-form__input-field__label" for="email">Email</label>
           <input class="login-form__input-field__input" type="email" name="email">
       </div>
 
       <div class="login-form__input-field">
-          <label class="login-form__input-field__label" for="password">Password :</label>
+          <label class="login-form__input-field__label" for="password">Password</label>
           <input class="login-form__input-field__input" type="password" name="password">
       </div>
       <button type="submit">subscribe</button>
