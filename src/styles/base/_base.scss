@@ -99,4 +99,20 @@ body {
       }
     }
   }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 3% auto 7% 6% 9% 5% 8% 8.5% 7% 7%;
+    background-color: #63b4f7;
+    padding: 10px;
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 1px;
+    font-size: 16px;
+    text-align: center;
+}
+.grid-item *{
+    margin: auto;
+}
 }
