@@ -34,7 +34,7 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <?php include 'header.php';?>
+    <?php include 'header.php'?>
     <a href="logout.php">logout</a>
 
     <h1>Hikes</h1>
