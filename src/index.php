@@ -60,7 +60,7 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
                     <span>Duration:</span> <?php echo $hike["duration"]; ?>
                 </div>
 
-                <div class="grid-item">
+                <div class="hike__elevation">
                     <span>Elevation gain:</span> <?php echo $hike["elevationGain"]; ?> m
                 </div>
 

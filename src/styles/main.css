@@ -484,6 +484,7 @@ body .hikes {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 2.5rem;
 }
 
 body .hikes .hike {
@@ -495,6 +496,14 @@ body .hikes .hike {
   padding: 1.75rem;
 }
 
+body .hikes .hike div {
+  padding: .5rem 0;
+}
+
+body .hikes .hike div span {
+  font-weight: 600;
+}
+
 body .hikes .hike__id {
   display: none;
 }
@@ -503,8 +512,32 @@ body .hikes .hike__name {
   width: 300px;
   font-family: "Bakbak One", cursive;
   font-size: 1.3rem;
-  border-bottom: 2px solid #234f37;
+  border-bottom: 3px solid #234f37;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   color: #234f37;
+}
+
+body .hikes .hike__date {
+  font-style: italic;
+  font-size: .9rem;
+}
+
+body .hikes .hike input {
+  padding: .3rem .6rem;
+  background: #234f37;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+body .hikes .hike__delete input {
+  background-color: #ad2b2b;
+}
+
+body .hikes .hike__create input {
+  background-color: #ccc;
 }

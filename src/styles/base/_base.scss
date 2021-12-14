@@ -99,6 +99,8 @@ body {
       }
     }
   }
+
+
   .logout-div {
     display: flex;
     padding-top: 2rem;
@@ -111,12 +113,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 2.5rem;
     .hike {
       margin: 1rem;
       box-shadow: 0 0 15px #888;
       background-color: #eee;
       border-radius: 20px;
       padding: 1.75rem;
+      div {
+        span {
+          font-weight: 600;
+        }
+        padding: .5rem 0;
+      }
       &__id {
         display: none;
       }
@@ -124,10 +133,34 @@ body {
         width: 300px;
         font-family: $heading-font;
         font-size: 1.3rem;
-        border-bottom: 2px solid $clr-1;
+        border-bottom: 3px solid $clr-1;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         color: $clr-1;
+      }
+      &__date {
+        font-style: italic;
+        font-size: .9rem;
+      }
+      input {
+        padding: .3rem .6rem;
+        background: $clr-1;
+        border: none;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 700;
+        border-radius: 10px;
+      }
+      &__delete {
+        input {
+          background-color: #ad2b2b;
+        }
+      }
+      &__create {
+        input {
+          background-color: #ccc;
+        }
       }
     }
   }
