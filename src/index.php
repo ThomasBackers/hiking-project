@@ -34,39 +34,68 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <?php include 'header.php'?>
-    <a href="logout.php">logout</a>
+    
+    <div class="logout-div">
+        <a class="logout" href="logout.php">logout</a>
+    </div>
 
-    <h1>Hikes</h1>
-    <?php
-    //display the datas
-    foreach ($hikes as $hike) : ?>
-        <div class="grid-container">
-            <div class="grid-item"><?php echo $hike["ID"]; ?></div>
-            <div class="grid-item"><?php echo $hike["name"]; ?></div>
-            <div class="grid-item"><?php echo $hike["difficulty"]; ?></div>
-            <div class="grid-item"><?php echo $hike["distance"]; ?></div>
-            <div class="grid-item"><?php echo $hike["duration"]; ?></div>
-            <div class="grid-item"><?php echo $hike["elevationGain"]; ?></div>
-            <?php if ($hike["modified_at"] == null) : ?>
-                <div class = "grid-item" > Created at <?php echo $hike["created_at"]; ?> </div>
-            <?php else : ?>
-                <div class = "grid-item" > Modified at <?php echo $hike["modified_at"]; ?> </div>
-            <?php endif ?>
-            <div class="grid-item">
-                <form class="delete-form" method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>">
-                    <input type="submit" name="delete-record" value="Delete record"></input>
-                </form>
+    <section class="hikes">
+        <?php
+        //display the datas
+        foreach ($hikes as $hike) : ?>
+            <div class="hike">
+                <div class="hike__id"><?php echo $hike["ID"]; ?></div>
+
+                <div class="hike__name"><?php echo $hike["name"]; ?></div>
+
+                <div class="hike__difficulty">
+                    <span>Difficulty:</span> <?php echo $hike["difficulty"]; ?>
+                </div>
+
+                <div class="hike__distance">
+                    <span>Distance:</span> <?php echo $hike["distance"]; ?> m
+                </div>
+
+                <div class="hike__duration">
+                    <span>Duration:</span> <?php echo $hike["duration"]; ?>
+                </div>
+
+                <div class="grid-item">
+                    <span>Elevation gain:</span> <?php echo $hike["elevationGain"]; ?> m
+                </div>
+
+                <?php if ($hike["modified_at"] == null) : ?>
+                    <div class = "hike__date" >
+                        Created at <?php echo $hike["created_at"]; ?>
+                    </div>
+                <?php else : ?>
+                    <div class = "hike__date" >
+                        Modified at <?php echo $hike["modified_at"]; ?>
+                    </div>
+                <?php endif ?>
+
+                <div class="hike__delete">
+                    <form class="delete-form" method="post" action="delete.php?id=<?php echo $hike["ID"]; ?>">
+                        <input type="submit" name="delete-record" value="Delete record"></input>
+                    </form>
+                </div>
+
+                <div class="hike__update">
+                    <form method="post" action="update.php?id=<?php echo $hike["ID"]; ?>">
+                        <input type="submit" name="update-record" value="Update record"></input>
+                    </form>
+                </div>
+
+                <div class="hike__create">
+                    <form method="POST" action="create.php">
+                        <input type="submit" value="Create new" />
+                    </form>
+                </div>
+
             </div>
-            <div class="grid-item">
-                <form method="post" action="update.php?id=<?php echo $hike["ID"]; ?>"><input type="submit" name="update-record" value="Update record"></input></form>
-            </div>
-            <div class="grid-item">
-                <form method="POST" action="create.php">
-                    <input type="submit" value="Create new" />
-                </form>
-            </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </section>
+
     <script type="text/javascript" src="scripts.js"></script>  
 </body>
 </html>
