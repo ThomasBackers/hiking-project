@@ -19,6 +19,7 @@ body {
       margin: 0;
       color: $clr-1;
       font-family: $heading-font;
+      cursor: default;
     }
   }
 
@@ -107,6 +108,12 @@ body {
     padding-bottom: 1rem;
     .logout {
       margin: 0 auto;
+      text-decoration: none;
+      color: #fff;
+      background-color: #ad2b2b;
+      padding: .3rem .6rem;
+      font-weight: 700;
+      border-radius: 10px;
     }
   }
   .hikes {
@@ -159,7 +166,7 @@ body {
       }
       &__create {
         input {
-          background-color: #ccc;
+          background-color: #bbb;
         }
       }
     }
